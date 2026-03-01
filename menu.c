@@ -1,8 +1,8 @@
-#include <ncurses.h>
-#include <string.h>
+#include "header.h"
 
-#define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
-
+int highlight = 0;
+int choice = -1;
+int c;
 
 void init_menu()
 {
@@ -24,9 +24,6 @@ int main()
     };
 
     int n_choices = ARRAY_SIZE(choices);
-    int highlight = 0;
-    int choice = -1;
-    int c;
 
     // initialize ncurses
     init_menu();
@@ -65,6 +62,7 @@ int main()
                 if (highlight >= n_choices)
                     highlight = 0;
                 break;
+
 
             case 10:  // Enter key
                 choice = highlight;
