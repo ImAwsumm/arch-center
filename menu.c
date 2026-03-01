@@ -34,7 +34,7 @@ int main()
     while (1) 
     {
         clear();
-        mvprintw(1, 2, "Template title");
+        mvprintw(1, 2, "Use arrow keys to move and Q to quit");
 
         for (int i = 0; i < n_choices; i++) 
 	{
@@ -72,6 +72,8 @@ int main()
 
             case 'q':
                 endwin();
+		// add waiting time
+		printw("Hey");
                 return 0;
         }
 
