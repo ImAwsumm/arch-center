@@ -13,7 +13,7 @@ clean:
 	@rm src/menu.o
 
 full: full_recompilation
-	gcc $(FLAGS) src/menu.o -o arch-center
+	@gcc  src/menu.o -o arch-center $(FLAGS)
 
 archc: user_recompilation
-	@gcc $(FLAGS) src/menu.o -o arch-center
+	@gcc src/menu.o -o arch-center $(FLAGS)
