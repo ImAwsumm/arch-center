@@ -1,11 +1,19 @@
-FLAGS = -Werror -Wall -Wextra
+FLAGS = -Werror -Wall -Wextra -lncurses
+USER_FLAGS = -lncurses
 
 full_recompilation:
 	gcc $(FLAGS) -c src/menu.c -o src/menu.o
 	@echo "Compiling full application"
 
+user_recompilation:
+	@gcc $(USER_FLAGS) -c src/menu.c -o src/menu.o
+	@#echo "Compiling full application"
+
 clean: 
-	@rm menu.o
+	@rm src/menu.o
 
 full: full_recompilation
 	gcc $(FLAGS) src/menu.o -o arch-center
+
+archc: user_recompilation
+	@gcc $(FLAGS) src/menu.o -o arch-center
