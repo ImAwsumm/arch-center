@@ -1,20 +1,11 @@
 #include "header.h"
 
-int highlight = 0;
-int choice = -1;
-int c;
-
-void init_menu()
-{
-    initscr();
-    clear();
-    noecho();
-    cbreak();
-    keypad(stdscr, TRUE);
-    curs_set(0);
-}
 int main() 
 {
+    int highlight = 0;
+    int choice = -1;
+    int c;
+
     const char *choices[] = 
     {
         "Option 1",
