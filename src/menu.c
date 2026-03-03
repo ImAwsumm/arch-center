@@ -1,10 +1,11 @@
 #include "header.h"
 
+int highlight = 0;
+int choice = -1;
+int c;
+
 int main() 
 {
-    int highlight = 0;
-    int choice = -1;
-    int c;
 
     const char *choices[] = 
     {
@@ -74,4 +75,19 @@ int main()
     }
     endwin();
     return 0;
+}
+
+void settings_menu()
+{
+    const char *settings_menu_choices[] = 
+    {
+        "Configure this program",
+        "Packages",
+        "configure dotfiles",
+        "Exit",
+    };
+    clear();
+    mvprintw(1, 2, "Settings");
+
+    c = getch();
 }
