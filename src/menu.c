@@ -74,9 +74,13 @@ int main()
 		printw("Hey");
                 return 0;
         }
+	if (choice == 3)
+	{
+	    endwin();
+	    return 0;
+	}
 
     }
-
     endwin();
     return 0;
 }
