@@ -18,7 +18,6 @@ int highlight;
 int choice;
 int c;
 
-
 int indent_left;
 int lines_from_top;
 int amount_of_options;
@@ -40,17 +39,22 @@ void display_menu(int amount_of_options, const char **options_text, int lines_fr
     }
 }
 
-void delay_time(int delay_quarters, int delay_seconds)
+void delay(int delay_quarters, int delay_seconds)
 {
     if (delay_quarters < 4)
     {
 	time_timer_quarters = delay_quarters * 250000000;
 	time_timer_seconds = delay_seconds;
     }
-    else
+    else if (delay_quarters == 4)
     {
 	time_timer_quarters = 0;
 	time_timer_seconds = delay_seconds + 1;
+    }
+    else
+    {
+	printw("Invalid use of delay function\n"); 
+	printw("You're stupid\n"); 
     }
 
     install_timer.tv_nsec = time_timer_quarters;
