@@ -6,3 +6,9 @@
 extern int highlight;
 extern int choice;
 extern int c;
+
+extern int delay_quarters; // max is 4 
+extern int delay_seconds;
+
+void init_menu();
+void delay(int delay_quarters, int delay_seconds);
