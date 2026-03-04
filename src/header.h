@@ -15,7 +15,7 @@ extern int delay_quarters; // max is 4
 extern int delay_seconds;
 extern struct timespec install_timer;
 
-void settings_menu();
+int settings_menu();
 
 void init_menu();
 void delay(int delay_quarters, int delay_seconds);
