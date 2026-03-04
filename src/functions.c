@@ -14,6 +14,32 @@ struct timespec install_timer;
 long int time_timer_quarters;
 long int time_timer_seconds;
 
+int highlight;
+int choice;
+int c;
+
+
+int indent_left;
+int lines_from_top;
+int amount_of_options;
+
+void display_menu(int amount_of_options, const char **options_text, int lines_from_top, int indent_left)
+{
+    for (int i = 0; i < amount_of_options; i++) 
+    {
+        if (i == highlight)
+        {
+            attron(A_REVERSE);
+            mvprintw(lines_from_top + i, indent_left, "%s", options_text[i]);
+            attroff(A_REVERSE);
+        }
+        else 
+        {
+            mvprintw(lines_from_top + i, indent_left, "%s", options_text[i]);
+        }
+    }
+}
+
 void delay_time(int delay_quarters, int delay_seconds)
 {
     if (delay_quarters < 4)
