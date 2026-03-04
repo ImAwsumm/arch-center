@@ -9,3 +9,22 @@ void init_menu()
     keypad(stdscr, TRUE);
     curs_set(0);
 }
+
+
+void delay_time(int delay_quarters, int delay_seconds)
+{
+    if (delay_quarters < 4)
+    {
+	time_timer_quarters = delay_quarters * 250000000;
+	time_timer_seconds = delay_seconds;
+    }
+    else
+    {
+	time_timer_quarters = 0;
+	time_timer_seconds = timer_seconds + 1;
+    }
+
+    install_timer.tv_nsec = time_timer_quarters;
+    install_timer.tv_sec = time_timer_seconds;
+    nanosleep(&install_timer, NULL);
+}
