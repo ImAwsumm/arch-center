@@ -11,8 +11,12 @@ void init_menu()
 }
 
 
+long int time_timer_quarters;
+long int time_timer_seconds;
+
 void delay_time(int delay_quarters, int delay_seconds)
 {
+
     if (delay_quarters < 4)
     {
 	time_timer_quarters = delay_quarters * 250000000;
@@ -21,7 +25,7 @@ void delay_time(int delay_quarters, int delay_seconds)
     else
     {
 	time_timer_quarters = 0;
-	time_timer_seconds = timer_seconds + 1;
+	time_timer_seconds = delay_seconds + 1;
     }
 
     install_timer.tv_nsec = time_timer_quarters;
