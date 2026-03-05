@@ -61,3 +61,31 @@ void delay(int delay_quarters, int delay_seconds)
     install_timer.tv_sec = time_timer_seconds;
     nanosleep(&install_timer, NULL);
 }
+
+
+void take_imput()
+{
+    switch (c) 
+    {
+        case KEY_UP:
+            highlight--;
+            if (highlight < 0)
+                highlight = n_choices - 1;
+            break;
+
+        case KEY_DOWN:
+            highlight++;
+            if (highlight >= n_choices)
+                highlight = 0;
+            break;
+
+
+        case 10:  // Enter key
+            choice = highlight;
+            break;
+
+        case 'b':
+            endwin();
+    	return 0;
+    }
+}
