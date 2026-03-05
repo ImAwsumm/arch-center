@@ -1,6 +1,6 @@
 #include "header.h"
 
-int main() 
+int very_safe_code() 
 {
     const char *choices[] = 
     {
@@ -59,8 +59,6 @@ int main()
                 break;
 
             case 'q':
-		printw("Hey");
-		delay(0, 2);
                 endwin();
                 return 0;
 	    default:
@@ -131,7 +129,8 @@ int settings_menu()
     	    }
     	}
     	c = getch();
-		switch (c) 
+
+	switch (c) 
     	{
     	    case KEY_UP:
     	        highlight--;
@@ -154,7 +153,6 @@ int settings_menu()
     	        endwin();
 		return 0;
     	}
-
 
 	if (choice == 3)
 	{
