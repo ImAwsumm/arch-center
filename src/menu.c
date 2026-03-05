@@ -60,7 +60,7 @@ int main()
 
             case 'q':
 		printw("Hey");
-		delay_time(0, 2);
+		delay(0, 2);
                 endwin();
                 return 0;
 	    default:
@@ -131,7 +131,7 @@ int settings_menu()
     	    }
     	}
     	c = getch();
-    	switch (c) 
+		switch (c) 
     	{
     	    case KEY_UP:
     	        highlight--;
@@ -155,6 +155,7 @@ int settings_menu()
 		return 0;
     	}
 
+
 	if (choice == 3)
 	{
 	    endwin();
@@ -163,14 +164,17 @@ int settings_menu()
 	else if (choice == 0)
 	{
 	    //settings_menu();
+	    // (aka nothing)
 	}
 	else if (choice == 1)
 	{
 	    //settings_menu();
+	    // (aka nothing)
 	}
 	else if (choice == 2)
 	{
 	    //settings_menu();
+	    // (aka nothing)
 	}
 	else
 	{
