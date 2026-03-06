@@ -1,5 +1,13 @@
 #include "header.h"
 
+enum user_options
+{
+	QUIT = 'q',
+	BACK = 'b',
+	//	UP
+	//	DOWN
+}
+
 void init_menu()
 {
     initscr();
