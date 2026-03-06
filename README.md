@@ -6,7 +6,7 @@ This programs is in C. Therefore it needs to be compiled before being executed.
 # Install
 In order to install the program, you first have to download it.
 ```bash
- git clone https://github.com/imawsumm/arch-center
+git clone https://github.com/imawsumm/arch-center
 cd arch-center/
 ```
 
