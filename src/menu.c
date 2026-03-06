@@ -75,11 +75,15 @@ int very_safe_code()
 	{
 	    //settings_menu();
 	    // (aka nothing)
+	    choice = -1;
+	    highlight = 0;
 	}
 	else if (choice == 1)
 	{
 	    //settings_menu();
 	    // (aka nothing)
+	    choice = -1;
+	    highlight = 0;
 	}
 	else if (choice == 2)
 	{
