@@ -71,7 +71,7 @@ void delay(int delay_quarters, int delay_seconds)
 }
 
 
-void take_imput()
+void take_imput_menu()
 {
     switch (c) 
     {
@@ -80,19 +80,16 @@ void take_imput()
             if (highlight < 0)
                 highlight = n_choices - 1;
             break;
-
         case KEY_DOWN:
             highlight++;
             if (highlight >= n_choices)
                 highlight = 0;
             break;
-
-
         case 10:  // Enter key
             choice = highlight;
             break;
 
-        case 'b':
+        case BACK:
             endwin();
     	return 0;
     }
