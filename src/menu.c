@@ -161,18 +161,18 @@ int settings_menu()
 	}
 	else if (choice == 0)
 	{
-	    //settings_menu();
-	    // (aka nothing)
+	    choice = -1;
+	    highlight = 0;
 	}
 	else if (choice == 1)
 	{
-	    //settings_menu();
-	    // (aka nothing)
+	    choice = -1;
+	    highlight = 0;
 	}
 	else if (choice == 2)
 	{
-	    //settings_menu();
-	    // (aka nothing)
+	    choice = -1;
+	    highlight = 0;
 	}
 	else
 	{
