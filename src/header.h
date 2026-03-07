@@ -19,3 +19,4 @@ int settings_menu();
 
 void init_menu();
 void delay(int delay_quarters, int delay_seconds);
+void take_imput_menu();
