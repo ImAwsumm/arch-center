@@ -1,6 +1,6 @@
 #include "header.h"
 
-int very_safe_code() 
+int main(void) 
 {
     const char *choices[] = 
     {
@@ -73,15 +73,11 @@ int very_safe_code()
 	}
 	else if (choice == 0)
 	{
-	    //settings_menu();
-	    // (aka nothing)
 	    choice = -1;
 	    highlight = 0;
 	}
 	else if (choice == 1)
 	{
-	    //settings_menu();
-	    // (aka nothing)
 	    choice = -1;
 	    highlight = 0;
 	}
