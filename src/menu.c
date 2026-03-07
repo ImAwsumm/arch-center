@@ -161,18 +161,15 @@ int settings_menu()
 	}
 	else if (choice == 0)
 	{
-	    choice = -1;
-	    highlight = 0;
+	    reset_imput();
 	}
 	else if (choice == 1)
 	{
-	    choice = -1;
-	    highlight = 0;
+	    reset_imput();
 	}
 	else if (choice == 2)
 	{
-	    choice = -1;
-	    highlight = 0;
+	    reset_imput();
 	}
 	else
 	{
