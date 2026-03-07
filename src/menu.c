@@ -154,26 +154,24 @@ int settings_menu()
 		return 0;
     	}
 
-	if (choice == 3)
+	switch (choice)
 	{
-	    endwin();
-	    return 0;
-	}
-	else if (choice == 0)
-	{
-	    reset_imput();
-	}
-	else if (choice == 1)
-	{
-	    reset_imput();
-	}
-	else if (choice == 2)
-	{
-	    reset_imput();
-	}
-	else
-	{
-	    choice = -1;
+	    case 0:
+		reset_imput();
+		break;
+	    case 1:
+		reset_imput();
+		break;
+	    case 2:
+		reset_imput();
+		break;
+
+	    case 3:
+		endwin();
+	    	return 0;
+	    default:
+		choice = -1;
+		break;
 	}
     }
     endwin();
