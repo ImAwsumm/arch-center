@@ -1,4 +1,12 @@
-use gcc or zig in order to compile the full program
+
+You can use make, gcc or zig in order to compile the full program.
+
+# compile using make
+
+```bash
+cd ..
+make full
+```
 
 # compile using gcc
 ```bash
