@@ -8,6 +8,9 @@
 //	//	DOWN
 //}
 
+int highlight;
+int choice;
+
 void init_menu()
 {
     initscr();
@@ -16,6 +19,12 @@ void init_menu()
     cbreak();
     keypad(stdscr, TRUE);
     curs_set(0);
+}
+
+void reset_imput()
+{
+    choice = -1;
+    highlight = 0;
 }
 
 struct timespec install_timer; 
