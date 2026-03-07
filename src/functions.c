@@ -1,12 +1,12 @@
 #include "header.h"
 
-enum user_options
-{
-	QUIT = 'q',
-	BACK = 'b',
-	//	UP
-	//	DOWN
-}
+//enum user_options
+//{
+//	QUIT = 'q',
+//	BACK = 'b',
+//	//	UP
+//	//	DOWN
+//}
 
 void init_menu()
 {
@@ -71,26 +71,28 @@ void delay(int delay_quarters, int delay_seconds)
 }
 
 
-void take_imput_menu()
-{
-    switch (c) 
-    {
-        case KEY_UP:
-            highlight--;
-            if (highlight < 0)
-                highlight = n_choices - 1;
-            break;
-        case KEY_DOWN:
-            highlight++;
-            if (highlight >= n_choices)
-                highlight = 0;
-            break;
-        case 10:  // Enter key
-            choice = highlight;
-            break;
-
-        case BACK:
-            endwin();
-    	return 0;
-    }
-}
+//void take_imput_menu(char choices, int n_choices)
+//{
+//
+//    int n_choices = ARRAY_SIZE(choices);
+//    switch (c) 
+//    {
+//        case KEY_UP:
+//            highlight--;
+//            if (highlight < 0)
+//                highlight = n_choices - 1;
+//            break;
+//        case KEY_DOWN:
+//            highlight++;
+//            if (highlight >= n_choices)
+//                highlight = 0;
+//            break;
+//        case 10:  // Enter key
+//            choice = highlight;
+//            break;
+//
+//        case 'b':
+//            endwin();
+//    	return 0;
+//    }
+//}
