@@ -101,7 +101,7 @@ int settings_menu()
     highlight = 0;
     while(1)
     {
-	const char *settings_menu_choices[] = 
+	const char *choices[] = 
     	{
     	    "Configure this program",
     	    "Packages",
@@ -114,18 +114,18 @@ int settings_menu()
     	mvprintw(0, 2, "Settings");
     	mvprintw(1, 2, "Press \"b\" to go back");
 
-    	int n_choices = ARRAY_SIZE(settings_menu_choices);
+    	int n_choices = ARRAY_SIZE(choices);
     	for (int i = 0; i < n_choices; i++) 
     	{
     	    if (i == highlight)
     	    {
     	        attron(A_REVERSE);
-    	        mvprintw(3 + i, 4, "%s", settings_menu_choices[i]);
+    	        mvprintw(3 + i, 4, "%s", choices[i]);
     	        attroff(A_REVERSE);
     	    }
     	    else 
     	    {
-    	        mvprintw(3 + i, 4, "%s", settings_menu_choices[i]);
+    	        mvprintw(3 + i, 4, "%s", choices[i]);
     	    }
     	}
     	c = getch();
