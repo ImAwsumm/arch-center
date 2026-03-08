@@ -78,28 +78,26 @@ void submenu_tip(int line)
 }
 
 
-//void take_imput_menu(char choices, int n_choices)
-//{
-//
-//    int n_choices = ARRAY_SIZE(choices);
-//    switch (c) 
-//    {
-//        case KEY_UP:
-//            highlight--;
-//            if (highlight < 0)
-//                highlight = n_choices - 1;
-//            break;
-//        case KEY_DOWN:
-//            highlight++;
-//            if (highlight >= n_choices)
-//                highlight = 0;
-//            break;
-//        case 10:  // Enter key
-//            choice = highlight;
-//            break;
-//
-//        case 'b':
-//            endwin();
-//    	return 0;
-//    }
-//}
+void take_imput_menu(int n_choices)
+{
+    switch (c) 
+    {
+        case KEY_UP:
+            highlight--;
+            if (highlight < 0)
+                highlight = n_choices - 1;
+            break;
+        case KEY_DOWN:
+            highlight++;
+            if (highlight >= n_choices)
+                highlight = 0;
+            break;
+        case 10:  // Enter key
+            choice = highlight;
+            break;
+
+        case 'b':
+            endwin();
+	    break;
+    }
+}
