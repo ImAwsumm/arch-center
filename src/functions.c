@@ -1,15 +1,8 @@
 #include "header.h"
 
-//enum user_options
-//{
-//	QUIT = 'q',
-//	BACK = 'b',
-//	//	UP
-//	//	DOWN
-//}
-
 int highlight;
 int choice;
+int line;
 
 void init_menu()
 {
@@ -77,6 +70,11 @@ void delay(int delay_quarters, int delay_seconds)
     install_timer.tv_nsec = time_timer_quarters;
     install_timer.tv_sec = time_timer_seconds;
     nanosleep(&install_timer, NULL);
+}
+
+void submenu_tip(int line)
+{
+    mvprintw(1, line, "Press \"b\" to go back");
 }
 
 
