@@ -53,7 +53,6 @@ int main(void)
                     highlight = 0;
                 break;
 
-
             case 10:  // Enter key
                 choice = highlight;
                 break;
@@ -90,6 +89,88 @@ int main(void)
 	else
 	{
 	    choice = -1;
+	}
+    }
+    endwin();
+    return 0;
+}
+
+int system_monitoring()
+{
+    highlight = 0;
+    while(1)
+    {
+	const char *choices[] = 
+    	{
+    	    "Configure this program",
+    	    "Packages",
+    	    "configure dotfiles",
+    	    "Back",
+    	};
+
+    	clear();
+
+    	mvprintw(0, 2, "Settings");
+    	mvprintw(1, 2, "Press \"b\" to go back");
+
+    	int n_choices = ARRAY_SIZE(choices);
+    	for (int i = 0; i < n_choices; i++) 
+    	{
+    	    if (i == highlight)
+    	    {
+    	        attron(A_REVERSE);
+    	        mvprintw(3 + i, 4, "%s", choices[i]);
+    	        attroff(A_REVERSE);
+    	    }
+    	    else 
+    	    {
+    	        mvprintw(3 + i, 4, "%s", choices[i]);
+    	    }
+    	}
+    	c = getch();
+
+	switch (c) 
+    	{
+    	    case KEY_UP:
+    	        highlight--;
+    	        if (highlight < 0)
+    	            highlight = n_choices - 1;
+    	        break;
+
+    	    case KEY_DOWN:
+    	        highlight++;
+    	        if (highlight >= n_choices)
+    	            highlight = 0;
+    	        break;
+
+
+    	    case 10:  // Enter key
+    	        choice = highlight;
+    	        break;
+
+    	    case 'b':
+    	        endwin();
+		return 0;
+    	}
+
+	switch (choice)
+	{
+	    case 0:
+		reset_imput();
+		break;
+	    case 1:
+		reset_imput();
+		break;
+	    case 2:
+		reset_imput();
+		break;
+
+	    case 3:
+		endwin();
+	    	return 0;
+	    default:
+		choice = -1;
+		break;
 	}
     }
     endwin();
