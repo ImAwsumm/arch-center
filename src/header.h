@@ -1,4 +1,5 @@
 #include <ncurses.h>
+#include <stdlib.h>
 #include <string.h>
 #include <time.h>
 
@@ -12,6 +13,7 @@ extern int lines_from_top;
 extern int amount_of_options;
 extern int line;
 extern int indent;
+extern char cmd;
 
 extern int delay_quarters; // max is 4 
 extern int delay_seconds;
