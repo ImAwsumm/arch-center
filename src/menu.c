@@ -102,15 +102,15 @@ int system_monitoring()
     {
 	const char *choices[] = 
     	{
-    	    "Configure this program",
-    	    "Packages",
-    	    "configure dotfiles",
+    	    "htop",
+    	    "btop",
+    	    "glances",
     	    "Back",
     	};
 
     	clear();
 
-    	mvprintw(0, 2, "Settings");
+    	mvprintw(0, 2, "View system activity");
     	mvprintw(1, 2, "Press \"b\" to go back");
 
     	int n_choices = ARRAY_SIZE(choices);
