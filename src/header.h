@@ -10,6 +10,8 @@ extern int c;
 extern int indent_left;
 extern int lines_from_top;
 extern int amount_of_options;
+extern int line;
+extern int indent;
 
 extern int delay_quarters; // max is 4 
 extern int delay_seconds;
