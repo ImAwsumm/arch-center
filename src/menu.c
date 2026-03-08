@@ -153,15 +153,26 @@ int system_monitoring()
 		return 0;
     	}
 
+	char cmd[16];
 	switch (choice)
 	{
 	    case 0:
+		snprintf(cmd, sizeof(cmd),
+			"htop");
+		system(cmd);
 		reset_imput();
+
 		break;
 	    case 1:
+		snprintf(cmd, sizeof(cmd),
+			"btop");
+		system(cmd);
 		reset_imput();
 		break;
 	    case 2:
+		snprintf(cmd, sizeof(cmd),
+			"glances");
+		system(cmd);
 		reset_imput();
 		break;
 
