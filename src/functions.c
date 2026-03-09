@@ -1,7 +1,5 @@
 #include "header.h"
 
-int highlight;
-int choice;
 int line;
 
 void init_menu()
@@ -12,12 +10,6 @@ void init_menu()
     cbreak();
     keypad(stdscr, TRUE);
     curs_set(0);
-}
-
-void reset_imput()
-{
-    choice = -1;
-    highlight = 0;
 }
 
 struct timespec install_timer; 
