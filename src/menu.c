@@ -98,6 +98,9 @@ int main()
 
 int system_monitoring()
 {
+    int choice = -1;
+    int highlight = 0;
+
     while(1)
     {
 	const char *choices[] = 
@@ -112,9 +115,6 @@ int system_monitoring()
 
     	mvprintw(0, 2, "View system activity");
     	mvprintw(1, 2, "Press \"b\" to go back");
-
-	int choice = -1;
-	int highlight = 0;
 
     	int n_choices = ARRAY_SIZE(choices);
     	for (int i = 0; i < n_choices; i++) 
@@ -164,16 +164,27 @@ int system_monitoring()
 			"htop");
 		system(cmd);
 
+		choice = -1;
+		highlight = 0;
+
 		break;
 	    case 1:
 		snprintf(cmd, sizeof(cmd),
 			"btop");
 		system(cmd);
+
+		choice = -1;
+		highlight = 0;
+
 		break;
 	    case 2:
 		snprintf(cmd, sizeof(cmd),
 			"glances");
 		system(cmd);
+
+		choice = -1;
+		highlight = 0;
+
 		break;
 
 	    case 3:
