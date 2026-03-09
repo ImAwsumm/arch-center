@@ -1,6 +1,6 @@
 #include "header.h"
 
-int main(void) 
+int main() 
 {
     const char *choices[] = 
     {
@@ -97,7 +97,6 @@ int main(void)
 
 int system_monitoring()
 {
-    highlight = 0;
     while(1)
     {
 	const char *choices[] = 
@@ -127,6 +126,7 @@ int system_monitoring()
     	        mvprintw(3 + i, 4, "%s", choices[i]);
     	    }
     	}
+
     	c = getch();
 
 	switch (c) 
@@ -190,18 +190,20 @@ int system_monitoring()
 
 int settings_menu()
 {
-    highlight = 0;
+
     while(1)
     {
 	const char *choices[] = 
     	{
     	    "Configure this program",
     	    "Packages",
-    	    "configure dotfiles",
+    	    "Configure dotfiles",
     	    "Back",
     	};
 
     	clear();
+
+	highlight = 0;
 
     	mvprintw(0, 2, "Settings");
     	mvprintw(1, 2, "Press \"b\" to go back");
@@ -220,23 +222,21 @@ int settings_menu()
     	        mvprintw(3 + i, 4, "%s", choices[i]);
     	    }
     	}
-    	c = getch();
 
-	switch (c) 
+	c = getch();
+
+    	switch (c) 
     	{
     	    case KEY_UP:
     	        highlight--;
     	        if (highlight < 0)
     	            highlight = n_choices - 1;
     	        break;
-
     	    case KEY_DOWN:
     	        highlight++;
     	        if (highlight >= n_choices)
     	            highlight = 0;
     	        break;
-
-
     	    case 10:  // Enter key
     	        choice = highlight;
     	        break;
