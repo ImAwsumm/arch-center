@@ -15,8 +15,8 @@ int main()
     // initialize ncurses
     init_menu();
 
-    choice = -1;
-    highlight = 0;
+    int choice = -1;
+    int highlight = 0;
     while (1) 
     {
         clear();
@@ -37,7 +37,7 @@ int main()
             }
         }
 
-        c = getch();
+        int c = getch();
 
         switch (c) 
 	{
@@ -77,6 +77,7 @@ int main()
 	}
 	else if (choice == 1)
 	{
+	    system_monitoring();
 	    choice = -1;
 	    highlight = 0;
 	}
@@ -112,6 +113,9 @@ int system_monitoring()
     	mvprintw(0, 2, "View system activity");
     	mvprintw(1, 2, "Press \"b\" to go back");
 
+	int choice = -1;
+	int highlight = 0;
+
     	int n_choices = ARRAY_SIZE(choices);
     	for (int i = 0; i < n_choices; i++) 
     	{
@@ -127,7 +131,7 @@ int system_monitoring()
     	    }
     	}
 
-    	c = getch();
+    	int c = getch();
 
 	switch (c) 
     	{
@@ -142,7 +146,6 @@ int system_monitoring()
     	        if (highlight >= n_choices)
     	            highlight = 0;
     	        break;
-
 
     	    case 10:  // Enter key
     	        choice = highlight;
@@ -160,27 +163,23 @@ int system_monitoring()
 		snprintf(cmd, sizeof(cmd),
 			"htop");
 		system(cmd);
-		reset_imput();
 
 		break;
 	    case 1:
 		snprintf(cmd, sizeof(cmd),
 			"btop");
 		system(cmd);
-		reset_imput();
 		break;
 	    case 2:
 		snprintf(cmd, sizeof(cmd),
 			"glances");
 		system(cmd);
-		reset_imput();
 		break;
 
 	    case 3:
 		endwin();
 	    	return 0;
 	    default:
-		choice = -1;
 		break;
 	}
     }
@@ -190,6 +189,8 @@ int system_monitoring()
 
 int settings_menu()
 {
+    int highlight = 0;
+    int choice = -1;
 
     while(1)
     {
@@ -200,10 +201,7 @@ int settings_menu()
     	    "Configure dotfiles",
     	    "Back",
     	};
-
     	clear();
-
-	highlight = 0;
 
     	mvprintw(0, 2, "Settings");
     	mvprintw(1, 2, "Press \"b\" to go back");
@@ -223,7 +221,7 @@ int settings_menu()
     	    }
     	}
 
-	c = getch();
+	int c = getch();
 
     	switch (c) 
     	{
@@ -232,11 +230,13 @@ int settings_menu()
     	        if (highlight < 0)
     	            highlight = n_choices - 1;
     	        break;
+
     	    case KEY_DOWN:
     	        highlight++;
     	        if (highlight >= n_choices)
     	            highlight = 0;
     	        break;
+
     	    case 10:  // Enter key
     	        choice = highlight;
     	        break;
@@ -249,16 +249,21 @@ int settings_menu()
 	switch (choice)
 	{
 	    case 0:
-		reset_imput();
+		highlight = 0;
+		choice = -1;
+
 		break;
 	    case 1:
-		reset_imput();
+		highlight = 0;
+		choice = -1;
+
 		break;
 	    case 2:
-		reset_imput();
-		break;
+		highlight = 0;
+		choice = -1;
 
-	    case 3:
+		break;
+	    case 3: // back button
 		endwin();
 	    	return 0;
 	    default:
