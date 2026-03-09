@@ -1,7 +1,5 @@
 #include "header.h"
 
-int line;
-
 void init_menu()
 {
     initscr();
@@ -16,15 +14,11 @@ struct timespec install_timer;
 long int time_timer_quarters;
 long int time_timer_seconds;
 
-int highlight;
-int choice;
-int c;
-
 int indent_left;
 int lines_from_top;
 int amount_of_options;
 
-void display_menu(int amount_of_options, const char **options_text, int lines_from_top, int indent_left)
+void display_menu(int highlight, int amount_of_options, const char **options_text, int lines_from_top, int indent_left)
 {
     for (int i = 0; i < amount_of_options; i++) 
     {
