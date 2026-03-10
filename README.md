@@ -18,6 +18,8 @@ make archc
 ```
 
 ## Features
+At the moment it can only execute simple programs like htop or btop
+
 *(doesn't have any features)*
 
 # Credits
