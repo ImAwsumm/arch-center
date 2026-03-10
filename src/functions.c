@@ -18,19 +18,19 @@ int indent_left;
 int lines_from_top;
 int amount_of_options;
 
-void display_menu(int highlight, int amount_of_options, const char **options_text, int lines_from_top, int indent_left)
+void display_menu(int d_highlight, int d_amount_of_options, const char **d_options_text, int d_lines_from_top, int d_indent_left)
 {
-    for (int i = 0; i < amount_of_options; i++) 
+    for (int i = 0; i < d_amount_of_options; i++) 
     {
-        if (i == highlight)
+        if (i == d_highlight)
         {
             attron(A_REVERSE);
-            mvprintw(lines_from_top + i, indent_left, "%s", options_text[i]);
+            mvprintw(d_lines_from_top + i, d_indent_left, "%s", d_options_text[i]);
             attroff(A_REVERSE);
         }
         else 
         {
-            mvprintw(lines_from_top + i, indent_left, "%s", options_text[i]);
+            mvprintw(d_lines_from_top + i, d_indent_left, "%s", d_options_text[i]);
         }
     }
 }
