@@ -22,4 +22,5 @@ int system_monitoring();
 void init_menu();
 void delay(int delay_quarters, int delay_seconds);
 void take_imput_menu();
+void menu_tip(int menu_type, int line);
 void reset_imput();
