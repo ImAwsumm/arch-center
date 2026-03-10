@@ -58,7 +58,14 @@ void delay(int delay_quarters, int delay_seconds)
     nanosleep(&install_timer, NULL);
 }
 
-void submenu_tip(int line)
+void menu_tip(int menu_type, int line)
 {
-    mvprintw(1, line, "Press \"b\" to go back");
+    if (menu_type == 2)
+    {
+	mvprintw(1, line, "Press \"b\" to go back");
+    }
+    else
+    {
+	mvprintw(1, line, "\"Invalid tip integer\"");
+    }
 }
