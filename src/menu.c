@@ -113,8 +113,8 @@ int system_monitoring()
 
     	clear();
 
-    	mvprintw(0, 2, "View system activity");
-    	mvprintw(1, 2, "Press \"b\" to go back");
+    	mvprintw(0, 2, "View system activity using one of the following programs");
+	menu_tip(2, 2);
 
     	int n_choices = ARRAY_SIZE(choices);
     	for (int i = 0; i < n_choices; i++) 
@@ -215,7 +215,7 @@ int settings_menu()
     	clear();
 
     	mvprintw(0, 2, "Settings");
-    	mvprintw(1, 2, "Press \"b\" to go back");
+	menu_tip(2, 2);
 
     	int n_choices = ARRAY_SIZE(choices);
     	for (int i = 0; i < n_choices; i++) 
