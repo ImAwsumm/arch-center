@@ -58,11 +58,15 @@ void delay(int delay_quarters, int delay_seconds)
     nanosleep(&install_timer, NULL);
 }
 
-void menu_tip(int menu_type, int line)
+void menu_tip(char *menu_type, int line)
 {
-    if (menu_type == 2)
+    if (strcmp(menu_type, "main") == 0) // Main menus
     {
-	mvprintw(1, line, "Press \"b\" to go back");
+	mvprintw(1, line, "Press \"q\" to quit");
+    }
+    else if (strcmp(menu_type, "sub") == 0) // Main menus
+    {
+        mvprintw(1, line, "Press \"b\" to go back");
     }
     else
     {
