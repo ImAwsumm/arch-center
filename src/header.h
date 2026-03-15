@@ -8,7 +8,6 @@
 extern int indent_left;
 extern int lines_from_top;
 extern int amount_of_options;
-extern int line;
 extern int indent;
 extern char cmd;
 
@@ -22,5 +21,5 @@ int system_monitoring();
 void init_menu();
 void delay(int delay_quarters, int delay_seconds);
 void take_imput_menu();
-void menu_tip(int menu_type, int line);
+void menu_tip(char *menu_type, int line);
 void reset_imput();
