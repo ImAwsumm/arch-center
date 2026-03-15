@@ -5,7 +5,7 @@ int main()
     const char *choices[] = 
     {
         "Option 0",
-        "Option 1",
+        "System monitoring",
         "Settings",
         "Exit",
     };
@@ -21,7 +21,7 @@ int main()
     {
         clear();
         mvprintw(0, 2, "Main menu");
-        mvprintw(1, 2, "Use arrow keys to move and Q to quit");
+	menu_tip("main", 2);
 
         for (int i = 0; i < n_choices; i++) 
 	{
@@ -114,7 +114,7 @@ int system_monitoring()
     	clear();
 
     	mvprintw(0, 2, "View system activity using one of the following programs");
-	menu_tip(2, 2);
+	menu_tip("sub", 2);
 
     	int n_choices = ARRAY_SIZE(choices);
     	for (int i = 0; i < n_choices; i++) 
@@ -215,7 +215,7 @@ int settings_menu()
     	clear();
 
     	mvprintw(0, 2, "Settings");
-	menu_tip(2, 2);
+	menu_tip("main", 2);
 
     	int n_choices = ARRAY_SIZE(choices);
     	for (int i = 0; i < n_choices; i++) 
