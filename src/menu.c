@@ -215,7 +215,7 @@ int settings_menu()
     	clear();
 
     	mvprintw(0, 2, "Settings");
-	menu_tip("main", 2);
+	menu_tip("sub", 2);
 
     	int n_choices = ARRAY_SIZE(choices);
     	for (int i = 0; i < n_choices; i++) 
@@ -265,6 +265,12 @@ int settings_menu()
 
 		break;
 	    case 1:
+		snprintf(cmd, sizeof(cmd),
+			"sudo pacman -Q");
+		system(cmd);
+
+		getch(); // intended blocking behaviour
+
 		highlight = 0;
 		choice = -1;
 
