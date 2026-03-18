@@ -285,3 +285,91 @@ int settings_menu()
     endwin();
     return 0;
 }
+
+int disk_management()
+{
+    int highlight = 0;
+    int choice = -1;
+
+    while(1)
+    {
+	const char *choices[] = 
+    	{
+    	    "Manage disk space with Wiper",
+    	    "WIP",
+    	    "WIP",
+    	    "WIP",
+    	};
+    	clear();
+
+    	mvprintw(0, 2, "Disk management");
+	menu_tip("sub", 2);
+
+    	int n_choices = ARRAY_SIZE(choices);
+    	for (int i = 0; i < n_choices; i++) 
+    	{
+    	    if (i == highlight)
+    	    {
+    	        attron(A_REVERSE);
+    	        mvprintw(3 + i, 4, "%s", choices[i]);
+    	        attroff(A_REVERSE);
+    	    }
+    	    else 
+    	    {
+    	        mvprintw(3 + i, 4, "%s", choices[i]);
+    	    }
+    	}
+
+	int c = getch();
+
+    	switch (c) 
+    	{
+    	    case KEY_UP:
+    	        highlight--;
+    	        if (highlight < 0)
+    	            highlight = n_choices - 1;
+    	        break;
+
+    	    case KEY_DOWN:
+    	        highlight++;
+    	        if (highlight >= n_choices)
+    	            highlight = 0;
+    	        break;
+
+    	    case 10:  // Enter key
+    	        choice = highlight;
+    	        break;
+
+    	    case 'b':
+    	        endwin();
+		return 0;
+    	}
+
+	switch (choice)
+	{
+	    case 0:
+		highlight = 0;
+		choice = -1;
+
+		break;
+	    case 1:
+		highlight = 0;
+		choice = -1;
+
+		break;
+	    case 2:
+		highlight = 0;
+		choice = -1;
+
+		break;
+	    case 3: // back button
+		endwin();
+	    	return 0;
+	    default:
+		choice = -1;
+		break;
+	}
+    }
+    endwin();
+    return 0;
+}
