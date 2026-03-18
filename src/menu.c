@@ -1,5 +1,7 @@
 #include "header.h"
 
+const int opt_indent_left = 4;
+
 int main() 
 {
     const char *choices[] = 
@@ -28,12 +30,12 @@ int main()
             if (i == highlight)
 	    {
                 attron(A_REVERSE);
-                mvprintw(3 + i, 4, "%s", choices[i]);
+                mvprintw(3 + i, opt_indent_left + 1, "%s", choices[i]);
                 attroff(A_REVERSE);
             }
 	    else 
 	    {
-                mvprintw(3 + i, 4, "%s", choices[i]);
+                mvprintw(3 + i, opt_indent_left, "%s", choices[i]);
             }
         }
 
@@ -122,12 +124,12 @@ int system_monitoring()
     	    if (i == highlight)
     	    {
     	        attron(A_REVERSE);
-    	        mvprintw(3 + i, 4, "%s", choices[i]);
+    	        mvprintw(3 + i, opt_indent_left + 1, "%s", choices[i]);
     	        attroff(A_REVERSE);
     	    }
     	    else 
     	    {
-    	        mvprintw(3 + i, 4, "%s", choices[i]);
+    	        mvprintw(3 + i, opt_indent_left, "%s", choices[i]);
     	    }
     	}
 
@@ -223,12 +225,12 @@ int settings_menu()
     	    if (i == highlight)
     	    {
     	        attron(A_REVERSE);
-    	        mvprintw(3 + i, 4, "%s", choices[i]);
+    	        mvprintw(3 + i, opt_indent_left + 1, "%s", choices[i]);
     	        attroff(A_REVERSE);
     	    }
     	    else 
     	    {
-    	        mvprintw(3 + i, 4, "%s", choices[i]);
+    	        mvprintw(3 + i, opt_indent_left, "%s", choices[i]);
     	    }
     	}
 
@@ -257,6 +259,7 @@ int settings_menu()
 		return 0;
     	}
 
+	char cmd[32];
 	switch (choice)
 	{
 	    case 0:
@@ -317,12 +320,12 @@ int disk_management()
     	    if (i == highlight)
     	    {
     	        attron(A_REVERSE);
-    	        mvprintw(3 + i, 4, "%s", choices[i]);
+    	        mvprintw(3 + i, opt_indent_left + 1, "%s", choices[i]);
     	        attroff(A_REVERSE);
     	    }
     	    else 
     	    {
-    	        mvprintw(3 + i, 4, "%s", choices[i]);
+    	        mvprintw(3 + i, opt_indent_left, "%s", choices[i]);
     	    }
     	}
 
