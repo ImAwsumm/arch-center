@@ -14,7 +14,7 @@ struct timespec install_timer;
 long int time_timer_quarters;
 long int time_timer_seconds;
 
-int indent_left;
+const int indent_left = 1;
 int lines_from_top;
 int amount_of_options;
 
@@ -62,14 +62,14 @@ void menu_tip(char *menu_type, int line)
 {
     if (strcmp(menu_type, "main") == 0) // Main menus
     {
-	mvprintw(1, line, "Press \"q\" to quit");
+	mvprintw(indent_left, line, "Press \"q\" to quit");
     }
     else if (strcmp(menu_type, "sub") == 0) // Main menus
     {
-        mvprintw(1, line, "Press \"b\" to go back");
+        mvprintw(indent_left, line, "Press \"b\" to go back");
     }
     else
     {
-	mvprintw(1, line, "\"Invalid tip integer\"");
+	mvprintw(indent_left, line, "\"Invalid tip integer\"");
     }
 }
