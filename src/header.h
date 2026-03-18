@@ -15,6 +15,7 @@ extern int delay_quarters; // max is 4
 extern int delay_seconds;
 extern struct timespec install_timer;
 
+int disk_management();
 int settings_menu();
 int system_monitoring();
 
