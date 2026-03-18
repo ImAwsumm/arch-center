@@ -5,7 +5,9 @@
 
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
 
-extern int indent_left;
+extern const int indent_left;
+extern const int opt_indent_left;
+
 extern int lines_from_top;
 extern int amount_of_options;
 extern int indent;
