@@ -22,5 +22,15 @@ At the moment it can only execute simple programs like htop or btop
 
 *(doesn't have any features)*
 
+## Commands for system maintenance
+```sh
+systemctl --failed
+journalctl -b
+```
+Remove unused dependency
+```sh
+pacman -Qtd
+```
+
 # Credits
 Me
