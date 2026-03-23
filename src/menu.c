@@ -6,7 +6,7 @@ int main()
 {
     const char *choices[] = 
     {
-        "Option 0",
+        "View system performance",
         "System monitoring",
         "Settings",
         "Exit",
@@ -305,7 +305,7 @@ int disk_management()
 	const char *choices[] = 
     	{
     	    "Manage disk space with Wiper",
-    	    "WIP",
+    	    "Gnome Disk Utility",
     	    "WIP",
     	    "WIP",
     	};
