@@ -1,4 +1,5 @@
-
+# arch-center source code
+Compile the program before executing it.
 You can use make, gcc or zig in order to compile the full program.
 
 # compile using make
