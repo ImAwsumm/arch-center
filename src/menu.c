@@ -2,7 +2,7 @@
 
 const int opt_indent_left = 4;
 
-int main() 
+int main(void) 
 {
     const char *choices[] = 
     {
