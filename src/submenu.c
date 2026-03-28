@@ -1,7 +1,7 @@
 #include "header.h"
 
 
-int system_monitoring()
+int system_monitoring(void)
 {
     int choice = -1;
     int highlight = 0;
@@ -103,7 +103,7 @@ int system_monitoring()
     return 0;
 }
 
-int settings_menu()
+int settings_menu(void)
 {
     int highlight = 0;
     int choice = -1;
@@ -198,7 +198,7 @@ int settings_menu()
     return 0;
 }
 
-int disk_management()
+int disk_management(void)
 {
     int highlight = 0;
     int choice = -1;
