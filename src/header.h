@@ -17,12 +17,12 @@ extern int delay_quarters; // max is 4
 extern int delay_seconds;
 extern struct timespec install_timer;
 
-int disk_management();
-int settings_menu();
-int system_monitoring();
+int disk_management(void);
+int settings_menu(void);
+int system_monitoring(void);
 
-void init_menu();
+void init_menu(void);
 void delay(int delay_quarters, int delay_seconds);
-void take_imput_menu();
+void take_imput_menu(void);
 void menu_tip(char *menu_type, int line);
-void reset_imput();
+void reset_imput(void);
