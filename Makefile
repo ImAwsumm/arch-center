@@ -1,6 +1,6 @@
 FLAGS = -Wall -Wextra -lncurses
 USER_FLAGS = -lncurses
-ZIG_FLAGS = -Wall -Wextra -lncurses -pedantic -fsanitize=undefined 
+ZIG_FLAGS = -Wall -Wextra -lncurses -pedantic -fsanitize=undefined -Werror
 
 full_recompilation:
 	gcc $(FLAGS) -c src/menu.c -o src/menu.o
