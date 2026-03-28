@@ -7,4 +7,5 @@ int package_list()
     // sudo pacman -Q
 
     init_menu();
+    return 0;
 }
