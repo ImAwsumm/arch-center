@@ -1,6 +1,6 @@
 #include "header.h"
 
-void init_menu()
+void init_menu(void)
 {
     initscr();
     clear();
