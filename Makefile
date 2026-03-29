@@ -1,4 +1,4 @@
-FLAGS = -Wall -Wextra -lncurses
+FLAGS = -Wall -Wextra -lncurses -Werror
 USER_FLAGS = -lncurses
 ZIG_FLAGS = -Wall -Wextra -lncurses -pedantic -fsanitize=undefined -Werror
 
