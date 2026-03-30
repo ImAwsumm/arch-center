@@ -30,6 +30,3 @@ Remove unused dependency
 ```sh
 pacman -Qtd
 ```
-
-# Credits
-Me
