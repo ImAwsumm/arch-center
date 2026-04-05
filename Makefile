@@ -32,10 +32,10 @@ zig_recompilation:
 	zig cc $(ZIG_FLAGS) -c $(submenu)
 
 clean: 
-	@rm src/menu.o
-	@rm src/functions.o
-	@rm src/programs.o
-	@rm src/submenu.o
+	@rm $(menu_object)
+	@rm $(functions_object)
+	@rm $(programs_object)
+	@rm $(submenu_object)
 
 archc: user_recompilation
 	@gcc src/programs.o src/submenu.o src/functions.o src/menu.o -o arch-center $(FLAGS)
