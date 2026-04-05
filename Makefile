@@ -8,17 +8,17 @@ programs = src/programs.c -o src/programs.o
 submenu = src/submenu.c -o src/submenu.o
 
 full_recompilation:
-	gcc $(FLAGS) -c src/menu.c -o src/menu.o
-	gcc $(FLAGS) -c src/functions.c -o src/functions.o
-	gcc $(FLAGS) -c src/programs.c -o src/programs.o
-	gcc $(FLAGS) -c src/submenu.c -o src/submenu.o
+	gcc $(FLAGS) -c $(menu)
+	gcc $(FLAGS) -c $(function)
+	gcc $(FLAGS) -c $(programs)
+	gcc $(FLAGS) -c $(submenu)
 	@echo "Compiling full application"
 
 user_recompilation:
-	@gcc $(USER_FLAGS) -c src/menu.c -o src/menu.o
-	@gcc $(USER_FLAGS) -c src/functions.c -o src/functions.o
-	@gcc $(USER_FLAGS) -c src/programs.c -o src/programs.o
-	@gcc $(USER_FLAGS) -c src/submenu.c -o src/submenu.o
+	@gcc $(USER_FLAGS) -c $(menu)
+	@gcc $(USER_FLAGS) -c $(function)
+	@gcc $(USER_FLAGS) -c $(programs)
+	@gcc $(USER_FLAGS) -c $(submenu)
 
 zig_recompilation:
 	zig cc $(ZIG_FLAGS) -c src/menu.c -o src/menu.o
