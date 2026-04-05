@@ -21,10 +21,10 @@ user_recompilation:
 	@gcc $(USER_FLAGS) -c $(submenu)
 
 zig_recompilation:
-	zig cc $(ZIG_FLAGS) -c src/menu.c -o src/menu.o
-	zig cc $(ZIG_FLAGS) -c src/functions.c -o src/functions.o
-	zig cc $(ZIG_FLAGS) -c src/programs.c -o src/programs.o
-	zig cc $(ZIG_FLAGS) -c src/submenu.c -o src/submenu.o
+	zig cc $(ZIG_FLAGS) -c $(menu)
+	zig cc $(ZIG_FLAGS) -c $(function)
+	zig cc $(ZIG_FLAGS) -c $(programs)
+	zig cc $(ZIG_FLAGS) -c $(submenu)
 
 clean: 
 	@rm src/menu.o
