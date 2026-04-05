@@ -2,10 +2,15 @@ FLAGS = -Wall -Wextra -lncurses -Werror
 USER_FLAGS = -lncurses
 ZIG_FLAGS = -Wall -Wextra -lncurses -pedantic -fsanitize=undefined -Werror
 
-menu = src/menu.c -o src/menu.o
-functions = src/functions.c -o src/functions.o
-programs = src/programs.c -o src/programs.o
-submenu = src/submenu.c -o src/submenu.o
+menu_object = src/menu.o
+functions_object = src/functions.o
+programs_object = src/programs.o
+submenu_object = src/submenu.o
+
+menu = src/menu.c -o $(menu_object)
+functions = src/functions.c -o $(functions_object)
+programs = src/programs.c -o $(programs_object)
+submenu = src/submenu.c -o $(submenu_object)
 
 full_recompilation:
 	gcc $(FLAGS) -c $(menu)
@@ -43,5 +48,5 @@ full: full_recompilation
 	@gcc src/programs.o src/submenu.o src/functions.o src/menu.o -o arch-center $(FLAGS)
 
 zigg: zig_recompilation
-	@zig cc src/programs.o src/submenu.o src/functions.o src/menu.o -o arch-center $(FLAGS)
+	@zig cc src/programs.o src/submenu.o src/functions.o src/menu.o -o arch-center $(ZIG_FLAGS)
 
