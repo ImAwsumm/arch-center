@@ -1,6 +1,6 @@
-FLAGS = -Wall -Wextra -lncurses -Werror
+FLAGS = -Wall -Wextra -lncurses -std=c99
 USER_FLAGS = -lncurses
-ZIG_FLAGS = -Wall -Wextra -lncurses -pedantic -fsanitize=undefined -Werror
+ZIG_FLAGS = -Wall -Wextra -lncurses -pedantic -fsanitize=undefined -Werror -std=c99
 
 menu_object = src/menu.o
 functions_object = src/functions.o
@@ -32,10 +32,10 @@ zig_recompilation:
 	zig cc $(ZIG_FLAGS) -c $(submenu)
 
 clean: 
-	@rm $(menu_object)
-	@rm $(functions_object)
-	@rm $(programs_object)
-	@rm $(submenu_object)
+	@rm src/menu.o
+	@rm src/functions.o
+	@rm src/programs.o
+	@rm src/submenu.o
 
 archc: user_recompilation
 	@gcc src/programs.o src/submenu.o src/functions.o src/menu.o -o arch-center $(FLAGS)
